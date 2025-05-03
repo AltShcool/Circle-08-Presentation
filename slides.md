@@ -52,9 +52,9 @@ transition: fade-out
 ---
 
 
-# 1 JavaScript Refresh
+# 1. JavaScript Refresh
 
-```js {monaco}
+```js {monaco-run}
 const originals = [1, 2, 3]
 const clone = [...originals]   // new copy
 clone.push(4)
@@ -98,7 +98,7 @@ transition: fade-out
 level: 2
 ---
 
-# 2 Asynchronous JavaScript
+# 2. Asynchronous JavaScript
 ```js {monaco-run}
 async function getGitHubUser(name) {
   const res = await fetch(`https://api.github.com/users/${name}`)
@@ -142,7 +142,7 @@ h1 {
 transition: fade-out
 ---
 
-# 3 DOM & Events
+# 3. DOM & Events
 ```html {monaco}
 <button id="btn">Clicked 0 times</button>
 
@@ -201,7 +201,7 @@ level: 3
 transition: slide-up
 ---
 
-# 4 ES Modules + Dynamic import()
+# 4. ES Modules + Dynamic import()
 ```js
 // utils/math.js
 export function add(a, b) { return a + b }
@@ -275,11 +275,23 @@ transition: fade-out
   </a>
 </div> 
 
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
 ---
 transition: fade-out
 ---
 
-# 5 Node & NPM + Bundlers
+# 5. Node & NPM + Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -295,13 +307,40 @@ vite preview           # test production build
 | Code‑splitting & optimisation                      | Smaller, faster production bundles |
 | Dev server with HMR                                | Instant feedback while coding      |
 
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
 ---
 class: px-20
 transition: slide-up
 ---
 
-# 6 Demo Confetti
-```js
+<script setup>
+import confetti from 'canvas-confetti'
+
+function celebrate() {
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 },
+  })
+}
+</script>
+
+# 6. Confetti Demo
+
+
+```js {monaco}
+//Confetti.js
 import confetti from 'canvas-confetti'
 
 export function celebrate() {
@@ -311,15 +350,42 @@ export function celebrate() {
     origin: { y: 0.6 }
   })
 }
+
 ```
 
-Call `celebrate()` after adding a new to‑do.
+```html
+<!-- todo -->
+<form id="todoForm">
+  <input name="task" required>
+  <button on:click={celebrate}>Add</button>
+</form>
+<script>
+  import celebrate from '/confetti.js'
+</script>
+```
+<button @click="celebrate" class="px-2 bg-pink-800 text-white rounded">
+  Add to do
+</button>
+
+Could be used to celebrate. E.g call `celebrate()` after adding a new to‑do.
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
 transition: slide-up
 ---
 
-**What this means**;
+**Summary**;
 
 | Skill                       | Real‑world impact                        |
 | --------------------------- | ---------------------------------------- |
