@@ -122,6 +122,8 @@ h1 {
 </style>
 
 ---
+transition: fade-out
+---
 
 # 3 DOM & Events
 ```html {monaco}
@@ -177,18 +179,9 @@ h1 {
 }
 </style>
 
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
 ---
 level: 3
+transition: slide-left
 ---
 
 # 4 ES Modules + Dynamic import()
@@ -233,6 +226,7 @@ h1 {
 
 ---
 Level: 3b
+transition: fade-out
 ---
 
 ### Form Handling with FormData
@@ -277,6 +271,8 @@ h3 {
 </style>
 
 ---
+transition: fade-out
+---
 
 # Node & NPM + Bundlers
 
@@ -296,24 +292,26 @@ vite preview           # test production build
 
 ---
 class: px-20
+transition: fade-out
 ---
 
 # Demo Confetti
 ```js
-// import confetti from 'canvas-confetti'
+import confetti from 'canvas-confetti'
 
-// export function celebrate() {
-//   confetti({
-//     particleCount: 150,
-//     spread: 70,
-//     origin: { y: 0.6 }
-//   })
-// }
+export function celebrate() {
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+  })
+}
 ```
+
 Call `celebrate()` after adding a new to‑do.
 
 ---
-fini!
+transition: fade-out
 ---
 
 **What this means**;
