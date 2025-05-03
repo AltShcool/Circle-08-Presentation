@@ -6,6 +6,7 @@ author: "Chris Ebube Roland"
 date: 7 May 2025
 class: text-center 
 download: true          
+transition: slide-left
 ---
 
 # Circle - 08 • Assignment Presentation
@@ -22,7 +23,6 @@ import Button from './components/Button.vue'
 3. DOM & Events  
 4. ES Modules & Form Handling  
 5. Node + npm & Bundlers  
-6. Wrap‑up / Q &A  
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -52,7 +52,7 @@ transition: fade-out
 
 # 1 JavaScript Refresh
 
-```js [1|3-5|7-9] {monaco}
+```js {monaco}
 const originals = [1, 2, 3]
 const clone = [...originals]   // new copy
 clone.push(4)
@@ -92,7 +92,7 @@ h1 {
 </style>
 
 ---
-transition: slide-up
+transition: fade-out
 level: 2
 ---
 
@@ -196,11 +196,11 @@ transition: fade-out
 
 ---
 level: 3
-transition: slide-left
+transition: slide-up
 ---
 
 # 4 ES Modules + Dynamic import()
-```js [7-9]
+```js
 // utils/math.js
 export function add(a, b) { return a + b }
 export default function mul(a, b) { return a * b }
@@ -273,23 +273,11 @@ transition: fade-out
   </a>
 </div> 
 
-<style>
-h3 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
 ---
 transition: fade-out
 ---
 
-# Node & NPM + Bundlers
+# 5 Node & NPM + Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -307,10 +295,10 @@ vite preview           # test production build
 
 ---
 class: px-20
-transition: fade-out
+transition: slide-up
 ---
 
-# Demo Confetti
+# 6 Demo Confetti
 ```js
 import confetti from 'canvas-confetti'
 
@@ -326,7 +314,7 @@ export function celebrate() {
 Call `celebrate()` after adding a new to‑do.
 
 ---
-transition: fade-out
+transition: slide-up
 ---
 
 **What this means**;
