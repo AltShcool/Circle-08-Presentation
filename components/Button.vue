@@ -1,4 +1,4 @@
- <template class="temp">
+ <template>
   <small class="temp">Click the button to increment the count.</small>
     <button title="Click the button to increment the count." @click="increment">{{ message }}</button>
   </template>
