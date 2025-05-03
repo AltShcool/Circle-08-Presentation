@@ -9,6 +9,8 @@ download: true
 transition: slide-left
 ---
 
+<img src="./unnamed (1).jpg" alt="AltSchool logo" class="w-32 mx-auto mb-4" />
+
 # Circle - 08 • Assignment Presentation
 
 ---
@@ -98,8 +100,8 @@ level: 2
 
 # 2 Asynchronous JavaScript
 ```js {monaco-run}
-async function getGitHubUser(username) {
-  const res = await fetch(`https://api.github.com/users/${username}`)
+async function getGitHubUser(name) {
+  const res = await fetch(`https://api.github.com/users/${name}`)
   if (!res.ok) throw new Error('Network error')
   return res.json()
 }
