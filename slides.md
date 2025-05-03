@@ -2,11 +2,14 @@
 theme: seriph           
 title: "Circle 08 Presentation"
 subtitle: "Circle - 08 • AltSchool Africa • Front‑End Engineering"
-author: "Cirlce - 08"
+author: "Chris Ebube Roland"
 date: 7 May 2025
 class: text-center 
-paginate: true          
 download: true          
+---
+
+# Circle - 08 • Assignment Presentation
+
 ---
 
 <script setup>
@@ -14,7 +17,7 @@ import Button from './components/Button.vue'
 </script>
 
 # Presentation Outline
-1. Core JavaScript Refresh  
+1. JavaScript Refresh  
 2. Asynchronous JavaScript  
 3. DOM & Events  
 4. ES Modules & Form Handling  
@@ -30,14 +33,26 @@ import Button from './components/Button.vue'
   </a>
 </div>
 
+<style>
+h1 {
+  background-color:rgb(182, 154, 43);
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
 ---
 transition: fade-out
 ---
 
 
-# 1 Core JS Refresh
+# 1 JavaScript Refresh
 
-```js {monaco-run} [1|3-5|7-9] 
+```js [1|3-5|7-9] {monaco}
 const originals = [1, 2, 3]
 const clone = [...originals]   // new copy
 clone.push(4)
@@ -89,8 +104,8 @@ async function getGitHubUser(username) {
   return res.json()
 }
 
-getGitHubUser('octocat')
-  .then(user => console.log(user.login))
+getGitHubUser('chrisroland')
+  .then(user => console.log(user.name))
   .catch(console.error)
 ```
 
@@ -185,7 +200,7 @@ transition: slide-left
 ---
 
 # 4 ES Modules + Dynamic import()
-```js
+```js [7-9]
 // utils/math.js
 export function add(a, b) { return a + b }
 export default function mul(a, b) { return a * b }
