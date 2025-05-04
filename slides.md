@@ -354,7 +354,6 @@ export function celebrate() {
 ```
 
 ```html
-<!-- todo -->
 <form id="todoForm">
   <input name="task" required>
   <button on:click={celebrate}>Add</button>
@@ -362,6 +361,7 @@ export function celebrate() {
 <script>
   import celebrate from '/confetti.js'
 </script>
+<!-- click button to see confetti fx -->
 ```
 <button @click="celebrate" class="px-2 bg-pink-800 text-white rounded">
   Add to do
@@ -387,7 +387,7 @@ transition: slide-up
 
 **Summary**;
 
-| Skill                       | Real‑world impact                        |
+| Skill learned               | Real‑world impact                        |
 | --------------------------- | ---------------------------------------- |
 | Clean array/object handling | Fewer bugs, simpler state updates        |
 | Promises & `await`          | Reliable API calls, loaders, error UI    |
