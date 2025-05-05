@@ -138,7 +138,7 @@ transition: fade-out
 level: 2
 ---
 
-# 2. Asynchronous JavaScript
+# 3. Asynchronous JavaScript
 ```js {monaco-run}
 async function getGitHubUser(name) {
   const res = await fetch(`https://api.github.com/users/${name}`)
@@ -184,7 +184,7 @@ h1 {
 transition: fade-out
 ---
 
-# 3. DOM & Events
+# 4. DOM & Events
 ```html {monaco}
 <button id="btn">Clicked 0 times</button>
 
@@ -243,7 +243,7 @@ level: 3
 transition: slide-up
 ---
 
-# 4. ES Modules + Dynamic import()
+# 5. ES Modules + Dynamic import()
 
 **Export** labels what a module shares while **import** pulls that piece into another file.
 
@@ -302,7 +302,7 @@ transition: fade-out
   todoForm.addEventListener('submit', e => {
     e.preventDefault()
     const data = new FormData(e.target)
-    console.log(Object.fromEntries(data)) // { task: "Buy milk" }
+    console.log(Object.fromEntries(data)) // { task: "Buy Akara" }
   })
 </script>
 ```
@@ -336,7 +336,7 @@ h1 {
 transition: fade-out
 ---
 
-# 5. Node & NPM + Bundlers
+# 6. Node & NPM + Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -368,7 +368,7 @@ h1 {
 transition: fade-out
 ---
 
-# 6. Browser Object Models
+# 7. Browser Object Models
 
 | Layer | What it lets JS control |
 |-------|-------------------------|
@@ -408,8 +408,6 @@ function celebrate() {
 </script>
 
 # Confetti Demo
-
-
 ```js {monaco}
 //Confetti.js
 import confetti from 'canvas-confetti'
@@ -421,7 +419,6 @@ export function celebrate() {
     origin: { y: 0.6 }
   })
 }
-
 ```
 
 ```html
@@ -458,7 +455,7 @@ transition: slide-up
 
 **Summary**;
 
-| Skill learned               | Real‑world impact                        |
+| Skills learned              | Usage/Real‑world impact                  |
 | --------------------------- | ---------------------------------------- |
 | Clean array/object handling | Fewer bugs, simpler state updates        |
 | Promises & `await`          | Reliable API calls, loaders, error UI    |
