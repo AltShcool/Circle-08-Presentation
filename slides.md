@@ -54,10 +54,15 @@ transition: fade-out
 
 # 1. JavaScript Refresh
 
+#### Spread Operator and Rest Parameter
+The Spread Operator [...oldCopy] creates a new copy of an array/object
+
 ```js {monaco-run}
 const originals = [1, 2, 3]
 const clone = [...originals]   // new copy
 clone.push(4)
+//OR
+// const clone = [...originals, 4]
 
 console.log(originals) // → [1,2,3]
 console.log(clone)     // → [1,2,3,4]
@@ -66,11 +71,19 @@ console.log(clone)     // → [1,2,3,4]
 function sum(...nums) {
   return nums.reduce((a, b) => a + b, 0)
 }
+console.log(sum(2+3+4+5+6+4)) // 24
 ```
+---
+
+
+### Cont'd
+The Rest Syntax allows a function accept any amount of argument 
+and gathers everything into one variable (an array).
 
 ### Key takeaways
 - Spread avoids accidental mutation
 - Rest collects unknown arguments
+
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -143,6 +156,45 @@ transition: fade-out
 ---
 
 # 3. DOM & Events
+Events are created in Javascript using the following methods
+* Html attribute
+* DOM Property
+* addEventListener
+
+### Html attribute
+```html {monaco}
+<p onmouseover="alert('Mouse!')">Click Me! </p>
+```
+
+### DOM Property
+DOM (Document Object Model) is simply Javascript representation of your Html, DOM is an 
+important aspect of Javascript. Through the DOM, we can search and modify html elements.
+---
+
+### continuation
+```html {monaco}
+<div id="event">Events in Javascript</div>
+<script>
+  event.onmouseover = function () {
+    alert('Hmm, Motion!')
+  }
+</script>
+
+  Creating an element Through the DOM
+<script>
+const newElement = document.createElement('p');
+ const newText = document.createTextNode('Javascript is not for the weak');
+ newElement.appendChild(newText);
+ element.appendChild(newElement);
+ console.log(newElement.textContent);
+ </script>
+```
+
+The main difference between "innerHTML" and "textContent" is that while textContent
+allows you to pass in text only, innerHTML allows you to pass in html text.
+---
+
+### addEventListener
 ```html {monaco}
 <button id="btn">Clicked 0 times</button>
 
@@ -156,8 +208,39 @@ transition: fade-out
   })
 </script>
 ```
+'click' is the event while the function represents a handler
+which listens or responds to the click event.
 
 <Button />
+---
+
+### The Concept of Event Bubbling and Capturing
+Bubbling - This concept simply entails firing an event on the
+innermost element, then on successively less nested elements.
+When the element is clicked, it runs the handlers on it, then up to
+its parent (We could refer to it as "Ascension" i.e moving upwards).
+```html
+<div onclick="alert('Second div')">
+<div onclick="alert('First div')">
+ <p onclick="alert('P Element')">P Element</p>
+</div>
+</div>
+```
+
+In the example above, the handler on the "p" tag will run,
+followed by the handlers on the first and second divs respectively.
+
+p ⟶ div 1 ⟶ div 2
+
+Capturing - This is the reverse of Bubbling, the event fires on the
+least nested element, then the following nested elements until it
+reaches the target element (moving downwards).
+---
+
+### Event Delegation
+Event delegation signifies assigning a single handler on a common parent
+to handle events on multiple child elements. This approach reduces the number 
+of event listeners required and improves efficiency.
 
 - `addEventListener` is preferred
 
@@ -184,6 +267,7 @@ transition: fade-out
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+
 
 .footnotes-sep {
   @apply mt-5 opacity-10;
