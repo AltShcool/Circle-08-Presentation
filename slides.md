@@ -20,11 +20,13 @@ import Button from './components/Button.vue'
 </script>
 
 # Presentation Outline
-1. JavaScript Refresh  
-2. Asynchronous JavaScript  
-3. DOM & Events  
-4. ES Modules & Form Handling  
-5. Node + npm & Bundlers  
+1. JavaScript Refresh
+2. Conditional Statements  
+3. Asynchronous JavaScript  
+4. DOM & Events  
+5. ES Modules & Form Handling  
+6. Node + npm & Bundlers
+7. Browser Object Modules  
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -81,9 +83,9 @@ The Rest Syntax allows a function accept any amount of argument
 and gathers everything into one variable (an array).
 
 ### Key takeaways
-- Spread avoids accidental mutation
-- Rest collects unknown arguments
-
+- Spread avoids accidental mutationq
+- Rest collects unknown arguments **and must be**  **• 
+last in the param list** • **only once** • **no default value**
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -93,6 +95,44 @@ and gathers everything into one variable (an array).
     <carbon:logo-github />
   </a>
 </div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+transition: fade-out
+class: text-sm
+---
+
+# 2. JS Conditional Toolkit
+
+```js
+if (score > 90)                  // IF
+  grade = 'A'
+else if (score > 75)             // ELSE‑IF
+  grade = 'B'
+else grade = 'C'
+
+const msg = age >= 18            // TERNARY
+  ? 'Vote!' : 'Grow up'
+
+switch(day) {                    // SWITCH
+  case 'Mon': …
+}
+```
+
+- **Nested switch** → rarely worth the complexity.
+
+- Pick the construct that keeps intent obvious.
 
 <style>
 h1 {
@@ -111,7 +151,7 @@ transition: fade-out
 level: 2
 ---
 
-# 2. Asynchronous JavaScript
+# 3. Asynchronous JavaScript
 ```js {monaco-run}
 async function getGitHubUser(name) {
   const res = await fetch(`https://api.github.com/users/${name}`)
@@ -129,6 +169,8 @@ getGitHubUser('chrisroland')
 - `async/await` reads top‑to‑bottom
 
 - Always handle errors `(try/catch or .catch())`
+
+- Callbacks still exist – `.map`, `.filter`, `.reduce` each expect one
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -155,7 +197,7 @@ h1 {
 transition: fade-out
 ---
 
-# 3. DOM & Events
+# 4. DOM & Events
 Events are created in Javascript using the following methods
 * Html attribute
 * DOM Property
@@ -244,7 +286,7 @@ of event listeners required and improves efficiency.
 
 - `addEventListener` is preferred
 
-- Understand bubbling vs capturing
+- Understand **bubbling** vs **capturing**
 
 - Use delegation for long lists
 
@@ -285,7 +327,10 @@ level: 3
 transition: slide-up
 ---
 
-# 4. ES Modules + Dynamic import()
+# 5. ES Modules + Dynamic import()
+
+**Export** labels what a module shares while **import** pulls that piece into another file.
+
 ```js
 // utils/math.js
 export function add(a, b) { return a + b }
@@ -341,7 +386,7 @@ transition: fade-out
   todoForm.addEventListener('submit', e => {
     e.preventDefault()
     const data = new FormData(e.target)
-    console.log(Object.fromEntries(data)) // { task: "Buy milk" }
+    console.log(Object.fromEntries(data)) // { task: "Buy Akara" }
   })
 </script>
 ```
@@ -375,7 +420,7 @@ h1 {
 transition: fade-out
 ---
 
-# 5. Node & NPM + Bundlers
+# 6. Node & NPM + Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -390,6 +435,32 @@ vite preview           # test production build
 | Browsers can’t import SVG/PNG or npm libs directly | Bundlers translate everything      |
 | Code‑splitting & optimisation                      | Smaller, faster production bundles |
 | Dev server with HMR                                | Instant feedback while coding      |
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+transition: fade-out
+---
+
+# 7. Browser Object Models
+
+| Layer | What it lets JS control |
+|-------|-------------------------|
+| **DOM** | HTML & content structure |
+| **CSSOM** | Stylesheets (classes, colors) |
+| **BOM** | Browser chrome – `window`, `history`, `navigator` |
+
+**Note:** the *window* object is global; *document* and styles live one layer below.
 
 <style>
 h1 {
@@ -420,9 +491,7 @@ function celebrate() {
 }
 </script>
 
-# 6. Confetti Demo
-
-
+# Confetti Demo
 ```js {monaco}
 //Confetti.js
 import confetti from 'canvas-confetti'
@@ -434,7 +503,6 @@ export function celebrate() {
     origin: { y: 0.6 }
   })
 }
-
 ```
 
 ```html
@@ -471,7 +539,7 @@ transition: slide-up
 
 **Summary**;
 
-| Skill learned               | Real‑world impact                        |
+| Skills learned              | Usage/Real‑world impact                  |
 | --------------------------- | ---------------------------------------- |
 | Clean array/object handling | Fewer bugs, simpler state updates        |
 | Promises & `await`          | Reliable API calls, loaders, error UI    |
