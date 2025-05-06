@@ -100,6 +100,24 @@ transition: fade-out
 class: text-sm
 ---
 
+# Handy Array Methods
+
+| Method | What it does | Mutates? |
+|--------|--------------|----------|
+|`sort(cb)`    | Arrange items, accepts compare fn | ✔ |
+|`reverse()`   | Flip order in place | ✔ |
+|`slice(‑‑)`   | Copy a portion | ✖ |
+|`push(x)`     | Add to end | ✔ |
+|`shift()`     | Remove first | ✔ |
+|`unshift(x)`  | Add to front | ✔ |
+
+> **Tip:** use non‑mutating methods (`slice`, `map`, `filter`) in React state to avoid bugs.
+
+---
+transition: fade-out
+class: text-sm
+---
+
 # 2. JS Conditional Toolkit
 
 ```js
@@ -154,6 +172,8 @@ getGitHubUser('chrisroland')
 - Promises tame callback hell
 
 - `async/await` reads top‑to‑bottom
+
+- `fetch()` supersedes old **XMLHttpRequest** for HTTP requests.
 
 - Always handle errors `(try/catch or .catch())`
 
