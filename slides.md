@@ -247,7 +247,7 @@ transition: slide-up
 
 **Export** labels what a module shares while **import** pulls that piece into another file.
 
-```js
+```js [9-11]
 // utils/math.js
 export function add(a, b) { return a + b }
 export default function mul(a, b) { return a * b }
@@ -336,7 +336,7 @@ h1 {
 transition: fade-out
 ---
 
-# 6. Node & NPM + Bundlers
+# 6. Node + npm & Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -374,7 +374,7 @@ transition: fade-out
 |-------|-------------------------|
 | **DOM** | HTML & content structure |
 | **CSSOM** | Stylesheets (classes, colors) |
-| **BOM** | Browser chrome – `window`, `history`, `navigator` |
+| **BOM** | Browser Object Model e.g chrome – `window`, `history`, `navigator` |
 
 **Note:** the *window* object is global; *document* and styles live one layer below.
 
@@ -424,7 +424,7 @@ export function celebrate() {
 ```html
 <form id="todoForm">
   <input name="task" required>
-  <button on:click={celebrate}>Add</button>
+  <button onclick="celebrate()">Add</button>
 </form>
 <script>
   import celebrate from '/confetti.js'
