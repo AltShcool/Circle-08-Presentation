@@ -20,13 +20,15 @@ import Button from './components/Button.vue'
 </script>
 
 # Presentation Outline
-1. JavaScript Refresh
-2. Conditional Statements  
-3. Asynchronous JavaScript  
-4. DOM & Events  
-5. ES Modules & Form Handling  
-6. Node + npm & Bundlers
-7. Browser Object Modules  
+1. JavaScript Roundup
+2. Handy Array Methods
+3. JS Conditional Statements
+4. Asynchronous JavaScript  
+5. BOM, DOM & Events 
+6. ES Modules & Form Handling  
+7. Node + npm & Bundlers
+8. Front‑End Engineer – Duties In Practice
+
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -50,14 +52,13 @@ h1 {
 </style>
 
 ---
-transition: fade-out
+transition: slide-up
 ---
 
+# 1. JavaScript Roundup
 
-# 1. JavaScript Refresh
-
-#### Spread Operator and Rest Parameter
-The Spread Operator [...oldCopy] creates a new copy of an array/object
+### Spread Operator and Rest Parameter
+The Spread Operator [`...oldCopy`] creates a new copy of an array/object
 
 ```js {monaco-run}
 const originals = [1, 2, 3]
@@ -75,8 +76,20 @@ function sum(...nums) {
 }
 console.log(sum(2+3+4+5+6+4)) // 24
 ```
----
 
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
 
 ### Cont'd
 The Rest Syntax allows a function accept any amount of argument 
@@ -109,29 +122,44 @@ h1 {
 </style>
 
 ---
-transition: fade-out
 class: text-sm
+transition: fade-out
 ---
 
-# Handy Array Methods
+# 2. Handy Array Methods
+
+These methods are the everyday tools for working with lists. <br>
+Mutatable methods change the original array, and non mutable ones don’t.
 
 | Method | What it does | Mutates? |
 |--------|--------------|----------|
-|`sort(cb)`    | Arrange items, accepts compare fn | ✔ |
-|`reverse()`   | Flip order in place | ✔ |
-|`slice(‑‑)`   | Copy a portion | ✖ |
-|`push(x)`     | Add to end | ✔ |
-|`shift()`     | Remove first | ✔ |
-|`unshift(x)`  | Add to front | ✔ |
+|`sort(cb)`    | Arrange items, accepts compare fn | Yes |
+|`reverse()`   | Flip order in place | Yes |
+|`slice(‑‑)`   | Copy a portion | No |
+|`push(x)`     | Add to end | Yes |
+|`shift()`     | Remove first | Yes |
+|`unshift(x)`  | Add to front | Yes |
 
-> **Tip:** use non‑mutating methods (`slice`, `map`, `filter`) in React state to avoid bugs.
+> **Note:** use non‑mutating methods (`slice`, `map`, `filter`) in React state to avoid bugs.
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
 transition: fade-out
 class: text-sm
 ---
 
-# 2. JS Conditional Toolkit
+# 3. JS Conditional Toolkit
 
 ```js
 if (score > 90)                  // IF
@@ -169,7 +197,7 @@ transition: fade-out
 level: 2
 ---
 
-# 3. Asynchronous JavaScript
+# 4. Asynchronous JavaScript
 ```js {monaco-run}
 async function getGitHubUser(name) {
   const res = await fetch(`https://api.github.com/users/${name}`)
@@ -214,26 +242,51 @@ h1 {
 </style>
 
 ---
-transition: fade-out
+class: text-sm
+transition: slide-up
 ---
 
-# 4. DOM & Events
-Events are created in Javascript using the following methods
-* Html attribute
-* DOM Property
-* addEventListener
+## 5. BOM, DOM & Events
 
-### Html attribute
+| Layer | What it lets JS control |
+|-------|-------------------------|
+| **DOM** | HTML & content structure |
+| **CSSOM** | Stylesheets (classes, colors) |
+| **BOM** | Browser Object Model e.g chrome – `window`, `history`, `navigator` |
+
+**Note:** the *window* object is global; *document* and styles live one layer below.
+
+Events are created in Javascript using the following methods
+- HTML attributes.
+- DOM Property.
+- `addEventListener`
+
+**- HTML attribute** provides additional information about elements and control their behavior. In the Document Object Model (DOM), attributes are represented as properties of element nodes.
+
 ```html {monaco}
-<p onmouseover="alert('Mouse!')">Click Me! </p>
+<p onmouseover="alert('You moused over this element!')">Hover here! </p>
 ```
 
-### DOM Property
-DOM (Document Object Model) is simply Javascript representation of your Html, DOM is an 
-important aspect of Javascript. Through the DOM, we can search and modify html elements.
+<style>
+h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+transition: slide-up
 ---
 
-### continuation
+### - **DOM Property**
+DOM (Document Object Model) is simply Javascript representation of your Html, DOM is an 
+important aspect of Javascript. Through the DOM, we can search and modify html elements.
+
 ```html {monaco}
 <div id="event">Events in Javascript</div>
 <script>
@@ -242,21 +295,21 @@ important aspect of Javascript. Through the DOM, we can search and modify html e
   }
 </script>
 
-  Creating an element Through the DOM
+<!-- Creating an element through the DOM -->
 <script>
-const newElement = document.createElement('p');
- const newText = document.createTextNode('Javascript is not for the weak');
- newElement.appendChild(newText);
- element.appendChild(newElement);
- console.log(newElement.textContent);
- </script>
+  const newElement = document.createElement('p');
+  const newText = document.createTextNode('Javascript is not for the weak');
+  newElement.appendChild(newText);
+  element.appendChild(newElement);
+  console.log(newElement.textContent);
+</script>
 ```
 
-The main difference between "innerHTML" and "textContent" is that while textContent
-allows you to pass in text only, innerHTML allows you to pass in html text.
+The main difference between "`innerHTML`" and "`textContent`" is that while `textContent`
+allows you to pass in text only, `innerHTML` allows you to pass in HTML text.
 ---
 
-### addEventListener
+### - **`addEventListener`**
 ```html {monaco}
 <button id="btn">Clicked 0 times</button>
 
@@ -270,36 +323,57 @@ allows you to pass in text only, innerHTML allows you to pass in html text.
   })
 </script>
 ```
-'click' is the event while the function represents a handler
-which listens or responds to the click event.
 
 <Button />
+
+`click` is the event while the function represents a handler
+which listens or responds to the click event.
+
+---
+transition: slide-up
 ---
 
-### The Concept of Event Bubbling and Capturing
-Bubbling - This concept simply entails firing an event on the
+# Event Bubbling and Capturing
+
+> Bubbling - This concept simply entails firing an event on the
 innermost element, then on successively less nested elements.
+
 When the element is clicked, it runs the handlers on it, then up to
 its parent (We could refer to it as "Ascension" i.e moving upwards).
+
+
 ```html
 <div onclick="alert('Second div')">
-<div onclick="alert('First div')">
- <p onclick="alert('P Element')">P Element</p>
-</div>
+  <div onclick="alert('First div')">
+    <p onclick="alert('P Element')">P Element</p>
+  </div>
 </div>
 ```
 
 In the example above, the handler on the "p" tag will run,
 followed by the handlers on the first and second divs respectively.
 
-p ⟶ div 1 ⟶ div 2
+`p ⟶ div 2 ⟶ div 1`
 
-Capturing - This is the reverse of Bubbling, the event fires on the
+> Capturing - This is the reverse of Bubbling, the event fires on the
 least nested element, then the following nested elements until it
 reaches the target element (moving downwards).
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
 ---
 
-### Event Delegation
+### **Event Delegation**
 Event delegation signifies assigning a single handler on a common parent
 to handle events on multiple child elements. This approach reduces the number 
 of event listeners required and improves efficiency.
@@ -320,17 +394,6 @@ of event listeners required and improves efficiency.
 </div>
 
 <style>
-  h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-
-
 .footnotes-sep {
   @apply mt-5 opacity-10;
 }
@@ -347,7 +410,7 @@ level: 3
 transition: slide-up
 ---
 
-# 5. ES Modules + Dynamic import()
+# 6. ES Modules + Dynamic import()
 
 **Export** labels what a module shares while **import** pulls that piece into another file.
 
@@ -440,7 +503,7 @@ h1 {
 transition: fade-out
 ---
 
-# 6. Node + npm & Bundlers
+# 7. Node + npm & Bundlers
 
 ```bash
 npm init -y            # generates package.json
@@ -472,15 +535,16 @@ h1 {
 transition: fade-out
 ---
 
-# 7. Browser Object Models
+# 8. Front‑End Engineer – Duties In Practice
 
-| Layer | What it lets JS control |
-|-------|-------------------------|
-| **DOM** | HTML & content structure |
-| **CSSOM** | Stylesheets (classes, colors) |
-| **BOM** | Browser Object Model e.g chrome – `window`, `history`, `navigator` |
+- Build **signup / login** flows (auth & form handling)  
+- **Validate** inputs and give clear feedback  
+- **Fetch** + sync data with APIs (CRUD)  
+- Wire UI interactions to real state (clicks, keys, drag)  
+- Ensure accessibility & responsive layout  
+.
 
-**Note:** the *window* object is global; *document* and styles live one layer below.
+> *Everything we learned this semester—arrays, async, DOM, modules—feeds directly into these day‑to‑day tasks of a Frontend Developer*
 
 <style>
 h1 {
@@ -554,15 +618,20 @@ h1 {
 </style>
 
 ---
+class: text-sm
 transition: slide-up
 ---
 
 **Summary**;
 
-| Skills learned              | Usage/Real‑world impact                  |
-| --------------------------- | ---------------------------------------- |
-| Clean array/object handling | Fewer bugs, simpler state updates        |
-| Promises & `await`          | Reliable API calls, loaders, error UI    |
-| DOM mastery                 | Interactive components without libraries |
-| ES Modules                  | Maintainable, testable codebase          |
-| Bundlers & npm              | Modern workflow—ready for React/Next     |
+| Skills learned                            | Usage/Real‑world impact                                       |
+|-------------------------------------------|---------------------------------------------------------------|
+| Spread / Rest **+ handy array methods**   | Immutable updates and clear list transformations              |
+| Conditional statements (if / switch / ternary) | Expressive, readable program flow control                |
+| Promises + `async/await` + `fetch`        | Reliable API calls, loaders, and robust error handling        |
+| **BOM / DOM / CSSOM** & event system      | Full control of page structure, style, and user interaction   |
+| Event delegation, bubbling, capturing     | Performant listeners even on large, dynamic lists             |
+| ES Modules + dynamic `import()`           | Predictable scope, tree‑shaking, and on‑demand code loading   |
+| Form handling with **FormData**           | Clean serialization for POST/PUT requests                     |
+| Node + npm **& Vite bundler**             | Modern dev server, HMR, tiny production bundles               |
+| Front‑End engineer daily duties           | Shows how all the above skills map to real project tasks      |
