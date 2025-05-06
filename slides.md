@@ -96,7 +96,7 @@ The Rest Syntax allows a function accept any amount of argument
 and gathers everything into one variable (an array).
 
 ### Key takeaways
-- Spread avoids accidental mutationq
+- Spread avoids accidental mutation
 - Rest collects unknown arguments **and must be**  **• 
 last in the param list** • **only once** • **no default value**
 
@@ -161,7 +161,7 @@ class: text-sm
 
 # 3. JS Conditional Toolkit
 
-```js
+```js {monaco}
 if (score > 90)                  // IF
   grade = 'A'
 else if (score > 75)             // ELSE‑IF
@@ -353,7 +353,7 @@ its parent (We could refer to it as "Ascension" i.e moving upwards).
 In the example above, the handler on the "p" tag will run,
 followed by the handlers on the first and second divs respectively.
 
-`p ⟶ div 2 ⟶ div 1`
+`p ⟶ div 1 ⟶ div 2`
 
 > Capturing - This is the reverse of Bubbling, the event fires on the
 least nested element, then the following nested elements until it
