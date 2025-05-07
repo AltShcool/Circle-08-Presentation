@@ -52,6 +52,43 @@ h1 {
 </style>
 
 ---
+
+# CIRCLE 8 MEMBERS
+- Chris Ebube Roland
+- Akinbileje Olawale Emmanuel
+- Saheed Toluwani Abdulwaheed
+- Abdul Saidat
+- Omotehinse Olubukola
+- Zainab AbdulAkeem
+- FINEBOY Rosemary Yole
+- Emeka Collins Elumelu
+- Jennifer Ezeugwu
+- Ogunedo Chukwudumebi
+- Sobowale Jesuferanmi
+
+
+<div class="abs-br m-6 text-xl">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
+    <carbon:edit />
+  </button>
+  <a href="https://github.com/AltShcool/Circle-08-Presentation" target="_blank" class="slidev-icon-btn">
+    <carbon:logo-github />
+  </a>
+</div>
+
+<style>
+h1 {
+  background-color:rgb(182, 154, 43);
+  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
 transition: slide-up
 ---
 
@@ -635,3 +672,7 @@ transition: slide-up
 | Form handling with **FormData**           | Clean serialization for POST/PUT requests                     |
 | Node + npm **& Vite bundler**             | Modern dev server, HMR, tiny production bundles               |
 | Front‑End engineer daily duties           | Shows how all the above skills map to real project tasks      |
+
+---
+
+# THANK YOU!
