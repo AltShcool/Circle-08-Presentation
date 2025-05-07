@@ -42,7 +42,7 @@ import Button from './components/Button.vue'
 <style>
 h1 {
   background-color:rgb(182, 154, 43);
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -79,7 +79,7 @@ h1 {
 <style>
 h1 {
   background-color:rgb(182, 154, 43);
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -117,7 +117,7 @@ console.log(sum(2+3+4+5+6+4)) // 24
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -134,8 +134,7 @@ and gathers everything into one variable (an array).
 
 ### Key takeaways
 - Spread avoids accidental mutation
-- Rest collects unknown arguments **and must be**  **• 
-last in the param list** • **only once** • **no default value**
+- The rest parameter (...nums) gathers any extra arguments and must appear only once, at the very end of the parameter list, with no default value.
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -149,7 +148,7 @@ last in the param list** • **only once** • **no default value**
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -182,7 +181,7 @@ Mutatable methods change the original array, and non mutable ones don’t.
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -220,7 +219,7 @@ switch(day) {                    // SWITCH
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -269,7 +268,7 @@ getGitHubUser('chrisroland')
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -307,7 +306,7 @@ Events are created in Javascript using the following methods
 <style>
 h2 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -399,7 +398,7 @@ reaches the target element (moving downwards).
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -481,7 +480,7 @@ import mul, { add } from './utils/math.js'
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -527,7 +526,7 @@ transition: fade-out
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -559,7 +558,7 @@ vite preview           # test production build
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -586,7 +585,7 @@ transition: fade-out
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -645,7 +644,7 @@ Could be used to celebrate. E.g call `celebrate()` after adding a new to‑do.
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg,rgb(189, 214, 124) 10%,rgb(230, 250, 53) 20%);
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -659,7 +658,7 @@ class: text-sm
 transition: slide-up
 ---
 
-**Summary**;
+**Tabled Summary**;
 
 | Skills learned                            | Usage/Real‑world impact                                       |
 |-------------------------------------------|---------------------------------------------------------------|
@@ -674,5 +673,24 @@ transition: slide-up
 | Front‑End engineer daily duties           | Shows how all the above skills map to real project tasks      |
 
 ---
+class: text-center
+---
 
 # THANK YOU!
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, rgb(189, 214, 124) 10%, rgb(250, 53, 53) 20%, rgb(230, 250, 53) 30%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 100px;
+}
+</style>
